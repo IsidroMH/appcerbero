@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './publico/home/home.component';
 
 import { FooterComponent } from './shared/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { KeycloakAngularModule,KeycloakService } from 'keycloak-angular';
 import { APP_INITIALIZER } from '@angular/core';
 import { initializeKeycloak } from './auth/keycloak-init.factory';
@@ -19,15 +19,14 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     HomeComponent,
-   // PaginaUnoComponent,
-   // PaginaDosComponent,
     FooterComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    HttpClientModule,
+    KeycloakAngularModule
   ],
   providers: [{
     provide: APP_INITIALIZER,
